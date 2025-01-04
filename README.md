@@ -10,21 +10,23 @@
 <h4 align="center">Born to fill up the missing LaTeX section folding feature in native VSCode</h5>
 
 Adds support to fold the following section tags:
-- \part
-- \chapter
-- \section
-- \subsection
-- \subsubsection
-- \paragraph
-- \subparagraph
+
+-   `\part`
+-   `\chapter`
+-   `\section`
+-   `\subsection`
+-   `\subsubsection`
+-   `\paragraph`
+-   `\subparagraph`
 
 **Demo**
 ![Demo](https://github.com/CarbonicSoda/vscode-latex-fold/blob/master/media/demo.png?raw=true)
 
 > Malformed section headers (e.g. without {}) will cause the section to be un-foldable.  
-> This is to prevent commands similar to \sectionhead to be matched incorrectly as section declarations.
+> This is to prevent other commands e.g. \sectionhead to be matched incorrectly as section declarations.
 
 ---
+
 <p>
 
-*&emsp;Who would ever use MSWord if he got LaTeX...?*
+_&emsp;Who would ever use MSWord if he got LaTeX...?_
