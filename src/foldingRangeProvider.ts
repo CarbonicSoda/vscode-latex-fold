@@ -39,35 +39,28 @@ export class LaTeXFoldingRangeProvider implements FoldingRangeProvider {
 		const endOffsets: (number | undefined)[] = [];
 		for (const match of text.matchAll(envRE)) {
 			const offset = match.index;
-
 			if (match.groups!.begin) {
 				startOffsets.push(offset);
 				continue;
 			}
-
 			let i = startOffsets.length;
 			while (endOffsets[--i]);
 			endOffsets[i] = offset;
 		}
-
 		if (endOffsets.filter((offset) => offset === undefined).length !== 0) return [];
 
 		return startOffsets.map((startOffset, i) => {
 			const endOffset = <number>endOffsets[i];
-
 			const beginLine = doc.positionAt(startOffset).line;
 			const endLine = doc.positionAt(endOffset).line;
-
 			return new FoldingRange(beginLine, endLine);
 		});
 	}
 
 	provideFoldingRanges(doc: TextDocument): FoldingRange[] {
 		const text = doc.getText();
-
 		const sectionRanges = this.#getSectionRanges(doc, text);
 		const envRanges = this.#getEnvRanges(doc, text);
-
 		return sectionRanges.concat(envRanges);
 	}
 }
