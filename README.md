@@ -9,14 +9,14 @@
 
 <h4 align="center">Born to fill up the missing LaTeX section folding feature in native VSCode</h5>
 
-    Supports folding:
-    - \part
-    - \chapter
-    - \section
-    - \subsection
-    - \subsubsection
-    - \paragraph
-	- \subparagraph
+Adds support to fold the following section tags:
+- \part
+- \chapter
+- \section
+- \subsection
+- \subsubsection
+- \paragraph
+- \subparagraph
 
 **Demo**
 ![Demo](https://github.com/CarbonicSoda/vscode-latex-fold/blob/master/media/demo.png?raw=true)
