@@ -2,7 +2,7 @@
 	"name": "latex-fold",
 	"displayName": "LaTeX Fold",
 	"description": "Folding Support for LaTeX Section Headers",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"publisher": "carbonsoda",
 	"author": {
 		"name": "David W."
