@@ -20,12 +20,19 @@
 	"engines": {
 		"vscode": "^1.80.0"
 	},
+	"keywords": [
+		"latex",
+		"LaTeX",
+		"fold",
+		"section"
+	],
 	"categories": [
 		"Other"
 	],
 	"activationEvents": [
 		"onLanguage:latex"
 	],
+	"icon": "media/icon.png",
 	"main": "./dist/extension.js",
 	"browser": "./dist/web/extension.js",
 	"scripts": {
