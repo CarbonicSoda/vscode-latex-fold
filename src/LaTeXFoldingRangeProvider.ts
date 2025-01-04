@@ -10,15 +10,15 @@ export class LaTeXFoldingRangeProvider implements FoldingRangeProvider {
 		"paragraph",
 		"subparagraph",
 	];
-	static #LATEX_SECTION_LEVELS_PATTERNS = this.#LATEX_SECTION_LEVELS.map((level) => {
+	static #LATEX_SECTION_LEVEL_PATTERNS = this.#LATEX_SECTION_LEVELS.map((level) => {
 		const delimiter = `\\\\${level}\\*?{.*?}`;
 		return `(?<head>${delimiter}).*?(?=${delimiter}|\\\\end{document}|$)`;
 	});
-	static #LATEX_SECTION_LEVELS_RE = RegExp(`(?:${this.#LATEX_SECTION_LEVELS_PATTERNS.join(")|(?:")})`, "gs");
+	static #LATEX_FOLDING_RANGE_RE = RegExp(`(?:${this.#LATEX_SECTION_LEVEL_PATTERNS.join(")|(?:")})`, "gs");
 
 	static #getSectionRanges(doc: TextDocument, text: string, _offset: number = 0): FoldingRange[] {
 		const sectionRanges = [];
-		for (const match of text.matchAll(this.#LATEX_SECTION_LEVELS_RE)) {
+		for (const match of text.matchAll(this.#LATEX_FOLDING_RANGE_RE)) {
 			const matchText = match[0];
 			const startOffset = _offset + match.index;
 			const endOffset = startOffset + matchText.length;
@@ -39,7 +39,6 @@ export class LaTeXFoldingRangeProvider implements FoldingRangeProvider {
 	}
 
 	provideFoldingRanges(doc: TextDocument): FoldingRange[] {
-		console.log(LaTeXFoldingRangeProvider.#LATEX_SECTION_LEVELS_RE);
 		const text = doc.getText();
 		return LaTeXFoldingRangeProvider.#getSectionRanges(doc, text);
 	}
