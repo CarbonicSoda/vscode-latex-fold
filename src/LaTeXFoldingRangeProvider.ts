@@ -12,7 +12,7 @@ export class LaTeXFoldingRangeProvider implements FoldingRangeProvider {
 	];
 	static #LATEX_SECTION_LEVELS_PATTERNS = this.#LATEX_SECTION_LEVELS.map((level) => {
 		const delimiter = `\\\\${level}\\*?{.*?}`;
-		return `(?<head>${delimiter}).*?(?=${delimiter}|\\\\end{.+?}|$)`;
+		return `(?<head>${delimiter}).*?(?=${delimiter}|\\\\end{document}|$)`;
 	});
 	static #LATEX_SECTION_LEVELS_RE = RegExp(`(?:${this.#LATEX_SECTION_LEVELS_PATTERNS.join(")|(?:")})`, "gs");
 
@@ -25,7 +25,7 @@ export class LaTeXFoldingRangeProvider implements FoldingRangeProvider {
 
 			const startLine = doc.positionAt(startOffset).line;
 			let endLine = doc.positionAt(endOffset).line;
-			if (endLine < doc.lineCount - 1 || doc.lineAt(doc.lineCount - 1).text.match(/\\end{.+?}/s)) {
+			if (endLine < doc.lineCount - 1 || doc.lineAt(doc.lineCount - 1).text.match(/\\end{document}/s)) {
 				endLine--;
 			}
 			sectionRanges.push(new FoldingRange(startLine, endLine));
