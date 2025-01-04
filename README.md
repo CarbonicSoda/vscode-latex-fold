@@ -3,11 +3,11 @@
 	<p></p>
 	LaTeX Fold for VSCode
 </h3>
-<h4 align="center">Folding Support for LaTeX Section Headers</h4>
+<h4 align="center">Essential Folding Ranges Support for LaTeX</h4>
 
 ---
 
-<h4 align="center">Born to fill up the missing LaTeX section folding feature in native VSCode</h5>
+<h4 align="center">Designed to enhance VSCode with essential LaTeX folding range functionality</h5>
 
 Adds support to fold the following section tags:
 
@@ -19,11 +19,20 @@ Adds support to fold the following section tags:
 -   `\paragraph`
 -   `\subparagraph`
 
-**Demo**
-![Demo](https://github.com/CarbonicSoda/vscode-latex-fold/blob/master/media/demo.png?raw=true)
+and
 
-> Malformed section headers (e.g. without {}) will cause the section to be un-foldable.  
-> This is to prevent other commands e.g. \sectionhead to be matched incorrectly as section declarations.
+- `\begin{...}` - `\end{...}`
+
+**Sections Folding**
+![Section Folding Demo](https://github.com/CarbonicSoda/vscode-latex-fold/blob/master/media/demo-sections.png?raw=true)
+
+**Environments Folding**
+![Section Folding Demo](https://github.com/CarbonicSoda/vscode-latex-fold/blob/master/media/demo-envs.png?raw=true)
+
+> Section headers should not be malformed (e.g. without {}),
+> else folding ranges will not be created.
+
+> Environments nesting should be balanced, else folding ranges will not be created. 
 
 ---
 

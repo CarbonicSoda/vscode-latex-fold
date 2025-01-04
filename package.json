@@ -1,7 +1,7 @@
 {
 	"name": "latex-fold",
 	"displayName": "LaTeX Fold",
-	"description": "Folding Support for LaTeX Section Headers",
+	"description": "Essential Folding Ranges Support for LaTeX",
 	"version": "1.0.3",
 	"publisher": "carbonsoda",
 	"author": {
@@ -24,7 +24,8 @@
 		"latex",
 		"LaTeX",
 		"fold",
-		"section"
+		"section",
+		"envs"
 	],
 	"categories": [
 		"Other"

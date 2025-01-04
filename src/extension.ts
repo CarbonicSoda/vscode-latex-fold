@@ -1,5 +1,5 @@
 import { ExtensionContext, languages } from "vscode";
-import { LaTeXFoldingRangeProvider } from "./LaTeXFoldingRangeProvider";
+import { LaTeXFoldingRangeProvider } from "./foldingRangeProvider";
 
 export function activate(context: ExtensionContext) {
 	const disposable = languages.registerFoldingRangeProvider("latex", new LaTeXFoldingRangeProvider());
