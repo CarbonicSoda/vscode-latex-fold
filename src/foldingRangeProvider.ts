@@ -31,10 +31,9 @@ export class LaTeXFoldingRangeProvider implements FoldingRangeProvider {
 	}
 
 	#getEnvRanges(doc: TextDocument, text: string): FoldingRange[] {
-		let envRE = /(?<begin>\\begin\s*{.+?})|(?<end>\\end\s*{.+?})/s;
-		if (text.match(envRE)?.groups?.end) return [];
-		envRE = new RegExp(envRE, "gs");
-
+		const envRE = /(?<begin>\\begin\s*{.+?})|(?<end>\\end\s*{.+?})/gs;
+		
+		let excessEnd = false;
 		const startOffsets: number[] = [];
 		const endOffsets: (number | undefined)[] = [];
 		for (const match of text.matchAll(envRE)) {
@@ -43,11 +42,17 @@ export class LaTeXFoldingRangeProvider implements FoldingRangeProvider {
 				startOffsets.push(offset);
 				continue;
 			}
-			let i = startOffsets.length;
-			while (endOffsets[--i]);
+			let i = startOffsets.length - 1;
+			while (endOffsets[i]) i--;
+			if (i < 0) {
+				excessEnd = true;
+				break;
+			}
 			endOffsets[i] = offset;
 		}
-		if (endOffsets.filter((offset) => offset === undefined).length !== 0) return [];
+		if (excessEnd || endOffsets.length !== startOffsets.length || endOffsets.includes(undefined)) {
+			return [];
+		}
 
 		return startOffsets.map((startOffset, i) => {
 			const endOffset = <number>endOffsets[i];

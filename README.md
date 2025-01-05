@@ -19,20 +19,22 @@ Adds support to fold the following section tags:
 -   `\paragraph`
 -   `\subparagraph`
 
-and
+and environment tags:
 
 - `\begin{...}` - `\end{...}`
 
 **Sections Folding**
 ![Section Folding Demo](https://github.com/CarbonicSoda/vscode-latex-fold/blob/master/media/demo-sections.png?raw=true)
 
+> Section headers should not be malformed (*e.g.* without {}),
+> else folding ranges will not be created.
+
 **Environments Folding**
 ![Section Folding Demo](https://github.com/CarbonicSoda/vscode-latex-fold/blob/master/media/demo-envs.png?raw=true)
 
-> Section headers should not be malformed (e.g. without {}),
+> Environment declaration commands should be balanced (*e.g.* no excess \end{}s),
 > else folding ranges will not be created.
 
-> Environments nesting should be balanced, else folding ranges will not be created. 
 
 ---
 
