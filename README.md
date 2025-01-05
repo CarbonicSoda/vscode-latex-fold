@@ -11,13 +11,13 @@
 
 Adds support to fold the following section tags:
 
--   `\part`
--   `\chapter`
--   `\section`
--   `\subsection`
--   `\subsubsection`
--   `\paragraph`
--   `\subparagraph`
+- `\part`
+- `\chapter`
+- `\section`
+- `\subsection`
+- `\subsubsection`
+- `\paragraph`
+- `\subparagraph`
 
 and environment tags:
 
@@ -26,15 +26,15 @@ and environment tags:
 **Sections Folding**
 ![Section Folding Demo](https://github.com/CarbonicSoda/vscode-latex-fold/blob/master/media/demo-sections.png?raw=true)
 
-> Section headers should not be malformed (*e.g.* without {}),
+> Section headers should not be malformed (_e.g._ without {}),
 > else folding ranges will not be created.
 
 **Environments Folding**
 ![Section Folding Demo](https://github.com/CarbonicSoda/vscode-latex-fold/blob/master/media/demo-envs.png?raw=true)
 
-> Environment declaration commands should be balanced (*e.g.* no excess \end{}s),
+> Environment declaration commands should be balanced (_e.g._ no excess \end{}s)
+> and never malformed (_e.g._ without {...}),
 > else folding ranges will not be created.
-
 
 ---
 
