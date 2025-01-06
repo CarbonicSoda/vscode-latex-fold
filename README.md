@@ -11,17 +11,17 @@
 
 Adds support to fold the following section tags:
 
-- `\part`
-- `\chapter`
-- `\section`
-- `\subsection`
-- `\subsubsection`
-- `\paragraph`
-- `\subparagraph`
+-   `\part`
+-   `\chapter`
+-   `\section`
+-   `\subsection`
+-   `\subsubsection`
+-   `\paragraph`
+-   `\subparagraph`
 
 and environment tags:
 
-- `\begin{...}` - `\end{...}`
+-   `\begin{...}` - `\end{...}`
 
 **Sections Folding**
 ![Section Folding Demo](https://github.com/CarbonicSoda/vscode-latex-fold/blob/master/media/demo-sections.png?raw=true)
@@ -36,8 +36,8 @@ and environment tags:
 > and never malformed (_e.g._ without {...}),
 > else folding ranges will not be created.
 
----
+###
 
-<p>
+---
 
 _&emsp;Who would ever use MSWord if he got LaTeX...?_
