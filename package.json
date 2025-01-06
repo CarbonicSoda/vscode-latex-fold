@@ -2,7 +2,7 @@
 	"name": "latex-fold",
 	"displayName": "LaTeX Fold",
 	"description": "Essential Folding Ranges Support for LaTeX",
-	"version": "2.0.7",
+	"version": "2.0.8",
 	"publisher": "carbonsoda",
 	"author": {
 		"name": "David W."
