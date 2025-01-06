@@ -47,7 +47,7 @@ const esbuildProblemMatcherPlugin = {
 
 	setup(build) {
 		build.onStart(() => {
-			console.log("[watch] build started");
+			console.log(`[watch] build started, production: ${production}`);
 		});
 		build.onEnd((result) => {
 			result.errors.forEach(({ text, location }) => {
