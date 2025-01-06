@@ -1,5 +1,4 @@
 const esbuild = require("esbuild");
-const polyfill = require("@esbuild-plugins/node-globals-polyfill");
 
 const production = process.argv.includes("--production");
 const watch = process.argv.includes("--watch");
@@ -16,18 +15,8 @@ async function main() {
 		outdir: "dist/web",
 		external: ["vscode"],
 		logLevel: "silent",
-		// Node.js global to browser globalThis
-		define: {
-			global: "globalThis",
-		},
 
-		plugins: [
-			polyfill.NodeGlobalsPolyfillPlugin({
-				process: true,
-				buffer: true,
-			}),
-			esbuildProblemMatcherPlugin /* add to the end of plugins array */,
-		],
+		plugins: [esbuildProblemMatcherPlugin /* add to the end of plugins array */],
 	});
 	if (watch) {
 		await ctx.watch();
