@@ -7,6 +7,7 @@ const RANGE_PROVIDERS = [getEnvRanges, getSectionRanges];
 
 export class LaTeXFoldingRangeProvider implements FoldingRangeProvider {
 	provideFoldingRanges(doc: TextDocument): FoldingRange[] {
-		return RANGE_PROVIDERS.flatMap((getRanges) => getRanges(doc, doc.getText()));
+		const text = doc.getText();
+		return RANGE_PROVIDERS.flatMap((getRanges) => getRanges(doc, text));
 	}
 }
