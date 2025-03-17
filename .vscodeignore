@@ -5,7 +5,6 @@ node_modules/**
 pnpm-lock.yaml
 src/**
 .gitignore
-.yarnrc
 esbuild.js
 esbuild.web.js
 **/tsconfig.json
