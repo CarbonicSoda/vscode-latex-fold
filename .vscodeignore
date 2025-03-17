@@ -8,9 +8,10 @@ src/**
 .yarnrc
 esbuild.js
 esbuild.web.js
-vsc-extension-quickstart.md
 **/tsconfig.json
 **/eslint.config.mjs
 **/*.map
 **/*.ts
 **/.vscode-test.*
+media\demo-envs.png
+media\demo-sections.png
